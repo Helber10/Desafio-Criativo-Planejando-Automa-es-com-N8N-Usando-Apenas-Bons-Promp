@@ -1,0 +1,32 @@
+================================================================================
+PROMPT FINAL: AUTOMATIZAÇÃO DE CAPTURA DE LEADS COM N8N (COM EXPORTAÇÃO GITHUB)
+================================================================================
+
+Atue como um especialista em automação de processos e engenharia de fluxos no n8n.
+
+OBJETIVO:
+Projetar um fluxo de trabalho automatizado para capturar dados de leads recebidos via formulário, validar as informações de contato, registrá-los em uma planilha centralizada, notificar a equipe comercial por e-mail e disponibilizar a estrutura exportável para versionamento no GitHub.
+
+PÚBLICO / DESTINATÁRIO:
+Equipe comercial e time de DevOps / Engenharia de Processos.
+
+FERRAMENTAS ENVOLVIDAS:
+- Trigger: Google Forms
+- Armazenamento: Google Sheets
+- Notificação: Gmail
+- Versionamento / Repositório: GitHub
+
+FLUXO DE TRABALHO PASSO A PASSO:
+1. Captura (Trigger): Monitorar e capturar em tempo real cada nova resposta enviada no Google Forms (ou via gatilho do Google Sheets associado ao formulário).
+2. Validação / Filtro (Filter Node): Verificar se o campo de e-mail do lead está preenchido e possui uma estrutura válida de e-mail (conter "@" e domínio válido).
+   - Regra estrita: Caso o e-mail seja inválido ou esteja em branco, interromper a execução imediatamente para esse registro.
+3. Registro (Google Sheets Node): Inserir uma nova linha (operação Append) na planilha de controle comercial mapeando os campos: Nome, E-mail, Telefone/WhatsApp, Respostas do Formulário e Data/Hora do envio.
+4. Notificação (Gmail Node): Disparar um e-mail formatado via Gmail para a equipe comercial contendo o resumo dos dados do novo lead e o alerta de novo atendimento.
+5. Integration / Versionamento (GitHub): Configurar ou estruturar a automação para que o JSON do fluxo do n8n possa ser commitado / salvo diretamente em um repositório no GitHub para backup e controle de versão.
+
+ENTREGÁVEIS ESPERADOS:
+1. Mapeamento detalhado dos nós do n8n a serem utilizados.
+2. Lógica de encadeamento dos nós (ordem de execução e condições).
+3. Expressões dinâmicas em JSON/Handlebars (ex: {{ $json.email }}) para o mapeamento dos campos na planilha e no corpo do e-mail.
+4. Estrutura do modelo de e-mail a ser enviado para a equipe de vendas.
+5. O código JSON completo e funcional da automação do n8n para importar no n8n ou salvar no repositório GitHub (`workflow.json`).
