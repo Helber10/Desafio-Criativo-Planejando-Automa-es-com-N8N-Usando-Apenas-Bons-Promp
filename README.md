@@ -1,0 +1,1 @@
+# Desafio-Criativo-Planejando-Automa-es-com-N8N-Usando-Apenas-Bons-Promp
